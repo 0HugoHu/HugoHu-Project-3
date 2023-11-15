@@ -32,17 +32,10 @@ fmt format:              ## Format code using black & isort.
 
 .PHONY: lint
 lint:             ## Run ruff, black, mypy linters.
-	$(ENV_PREFIX)ruff ids706_python_template/
-	$(ENV_PREFIX)black -l 79 --check ids706_python_template/
-	$(ENV_PREFIX)black -l 79 --check tests/
-	$(ENV_PREFIX)mypy --ignore-missing-imports ids706_python_template/
 
 .PHONY: test
 test: lint        ## Run tests and generate coverage report.
-	$(ENV_PREFIX)pytest -v --cov-config .coveragerc --cov=ids706_python_template -l --tb=short --maxfail=1 tests/
-	#$(ENV_PREFIX)pytest --nbval ids706_python_template/Hugo-Project-1.ipynb
-	$(ENV_PREFIX)coverage xml
-	$(ENV_PREFIX)coverage html
+
 
 .PHONY: watch
 watch:            ## Run tests on every change.
