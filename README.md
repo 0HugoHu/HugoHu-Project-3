@@ -4,8 +4,8 @@
 [![Test](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/test.yml/badge.svg)](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/tests.yml)
 
 
-[Youtube Video Here](https://youtu.be/tKc4hfgMkNs) 
-&nbsp;&nbsp;![YouTube Video Views](https://img.shields.io/youtube/views/tKc4hfgMkNs)
+[Youtube Video Here](https://youtu.be/Zc14G47JNk4) 
+&nbsp;&nbsp;![YouTube Video Views](https://img.shields.io/youtube/views/Zc14G47JNk4)
 
 
 ## Individual Project #3: Databricks ETL (Extract Transform Load) Pipeline
