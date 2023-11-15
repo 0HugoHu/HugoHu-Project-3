@@ -1,7 +1,7 @@
 [![Install](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/lint.yml/badge.svg)](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/lint.yml)
-[![Lint](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/rustfmt.yml/badge.svg)](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/rustfmt.yml)
-[![Format](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/binary.yml/badge.svg)](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/binary.yml)
-[![Test](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/tests.yml/badge.svg)](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/tests.yml)
+[![Lint](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/format.yml/badge.svg)](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/rustfmt.yml)
+[![Format](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/install.yml/badge.svg)](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/binary.yml)
+[![Test](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/test.yml/badge.svg)](https://github.com/0HugoHu/HugoHu-Project-3/actions/workflows/tests.yml)
 
 
 [Youtube Video Here](https://youtu.be/tKc4hfgMkNs) 
@@ -73,7 +73,7 @@ For state like ```North Carolina```, the purchase amounts are almost the same du
 If you are companies in ```Arizona```, you should focus more on the ```Fall``` season.
 
 
-### Databricks ETL Pipeline
+### 5. Databricks ETL Pipeline
 The pipeline is set up by 4 steps:
 1. Create Environment: Store the hostname and token in environment variables
 2. Extract: Load the dataset into a Databricks Delta Lake table
@@ -84,7 +84,7 @@ It is scheduled to run every day at 05:14 AM UTC.
 ![](.tutorial/indi3_workflow.png)
 
 
-### Conclusion
+### 6. Conclusion
 From this project, I learned how to use Databricks to analyze data and visualize the results. I also learned how to set up a Databricks ETL Pipeline to automate the process.
 
 The result shows a fun fact that despite different age groups, people spend money on the ```Clothing``` and ```Accessories``` categories. And the holiday season has the highest average purchase amount.
