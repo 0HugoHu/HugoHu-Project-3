@@ -2,10 +2,10 @@
 query and visualize data
 """
 
-from pyspark.sql import SparkSession
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
+from pyspark.sql import SparkSession
 
 
 def query_transform1():
@@ -30,6 +30,7 @@ def query_transform1():
     query_result = spark.sql(query)
     return query_result
 
+
 def query_transform2():
     spark = SparkSession.builder.appName("Query").getOrCreate()
     query = (
@@ -41,7 +42,7 @@ def query_transform2():
         " WHERE Subscription_Status = 'Yes'"
         " GROUP BY Location, Season"
         " ORDER BY Location, Season;"
-        )
+    )
     query_result = spark.sql(query)
     return query_result
 
@@ -70,10 +71,16 @@ def plot_age_distribution():
         print("No data available. Please investigate.")
     # Plotting
     plt.figure(figsize=(12, 8))
-    sns.barplot(x='AgeGroup', y='NumberOfCustomers', hue='Category', data=df, errorbar=None)
-    plt.title('Customer Age Distribution by Category and Gender')
-    plt.xlabel('Age Group')
-    plt.ylabel('Number of Customers')
+    sns.barplot(
+        x="AgeGroup",
+        y="NumberOfCustomers",
+        hue="Category",
+        data=df,
+        errorbar=None,
+    )
+    plt.title("Customer Age Distribution by Category and Gender")
+    plt.xlabel("Age Group")
+    plt.ylabel("Number of Customers")
     plt.show()
 
 
@@ -85,14 +92,27 @@ def plot_purchase_by_sub():
         print("No data available. Please investigate.")
 
     # Pivot the DataFrame for better visualization
-    pivot_df_subscribed = df.pivot_table(index='Location', columns='Season', values='AvgPurchaseAmount', aggfunc='mean')
+    pivot_df_subscribed = df.pivot_table(
+        index="Location",
+        columns="Season",
+        values="AvgPurchaseAmount",
+        aggfunc="mean",
+    )
 
     # Plotting
     plt.figure(figsize=(12, 8))
-    sns.heatmap(pivot_df_subscribed, annot=True, cmap='viridis', fmt=".2f", linewidths=.5)
-    plt.title('Average Purchase Amount by Location and Season (Subscribed Customers Only)')
-    plt.xlabel('Season')
-    plt.ylabel('Location')
+    sns.heatmap(
+        pivot_df_subscribed,
+        annot=True,
+        cmap="viridis",
+        fmt=".2f",
+        linewidths=0.5,
+    )
+    plt.title(
+        "Average Purchase Amount by Location and Season (Subscribed Customers Only)"
+    )
+    plt.xlabel("Season")
+    plt.ylabel("Location")
     plt.show()
 
 
@@ -104,20 +124,31 @@ def plot_purchase_by_not_sub():
         print("No data available. Please investigate.")
 
     # Pivot the DataFrame for better visualization
-    pivot_df_subscribed = df.pivot_table(index='Location', columns='Season', values='AvgPurchaseAmount', aggfunc='mean')
+    pivot_df_subscribed = df.pivot_table(
+        index="Location",
+        columns="Season",
+        values="AvgPurchaseAmount",
+        aggfunc="mean",
+    )
 
     # Plotting
     plt.figure(figsize=(12, 8))
-    sns.heatmap(pivot_df_subscribed, annot=True, cmap='viridis', fmt=".2f", linewidths=.5)
-    plt.title('Average Purchase Amount by Location and Season (Subscribed Customers Only)')
-    plt.xlabel('Season')
-    plt.ylabel('Location')
+    sns.heatmap(
+        pivot_df_subscribed,
+        annot=True,
+        cmap="viridis",
+        fmt=".2f",
+        linewidths=0.5,
+    )
+    plt.title(
+        "Average Purchase Amount by Location and Season (Subscribed Customers Only)"
+    )
+    plt.xlabel("Season")
+    plt.ylabel("Location")
     plt.show()
+
 
 if __name__ == "__main__":
     plot_age_distribution()
     plot_purchase_by_sub()
     plot_purchase_by_not_sub()
-
-
-
